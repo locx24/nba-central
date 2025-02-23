@@ -1,4 +1,4 @@
-<h1>NBA MVP Data</h1>
+<h1>NBA Central</h1>
 
 This project displays the MVP data for each NBA season, including details such as the player, points, assists, and rebounds. The data is fetched from an API endpoint created in the backend, which provides MVP data for different seasons.
 Features
