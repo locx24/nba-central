@@ -1,4 +1,6 @@
 import csv
+import pandas as pd
+from nba_api.live.nba.endpoints import scoreboard
 
 def main():
     
@@ -9,8 +11,7 @@ def main():
         mvpCSV = csv.reader(csvToRead)    
         mvpCSV = list(mvpCSV)  
         
-
- # create a list to store the desired columns 
+    # create a list to store the desired columns 
     extractedData = []
     
     # loop over the rows and extract the desired columns
@@ -22,7 +23,7 @@ def main():
         ast = row[10]
         trb = row[9]
         
-        # Add extracted data to the list
+        # add extracted data to the list
         extractedData.append({
             "Season": season,
             "Player Name": player,
@@ -31,9 +32,27 @@ def main():
             "Total Rebouds": trb
         })
     
-    # Print the extracted data (for testing purposes)
-    for data in extractedData:
-        print(data)
-  
+    # print the extracted data
+    #for data in extractedData:
+     #   print(data)
+     
+    games = scoreboard.ScoreBoard()
+    
+    data = games.get_dict()
+    
+    gameList = data["scoreboard"]["games"]
+    
+    for game in gameList:
+        
+        
+        homeTeam = game['homeTeam']['teamCity'] + " " + game['homeTeam']['teamName']
+        awayTeam = game['awayTeam']['teamCity'] + " " + game['awayTeam']['teamName']
+        
+        homeScore = game['homeTeam']['score']
+        awayScore = game['awayTeam']['score']
+        
+        print(f"{awayTeam} {awayScore} - {homeTeam} {homeScore}\n") 
+        
+        
 if __name__ == '__main__':
     main()
