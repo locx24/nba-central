@@ -42,7 +42,7 @@ def main():
     
     gameList = data["scoreboard"]["games"]
     
-    for game in gameList:
+    """for game in gameList:
         
         
         homeTeam = game['homeTeam']['teamCity'] + " " + game['homeTeam']['teamName']
@@ -51,8 +51,4 @@ def main():
         homeScore = game['homeTeam']['score']
         awayScore = game['awayTeam']['score']
         
-        print(f"{awayTeam} {awayScore} - {homeTeam} {homeScore}\n") 
-        
-        
-if __name__ == '__main__':
-    main()
+        print(f"{awayTeam} {awayScore} - {homeTeam} {homeScore}\n") """

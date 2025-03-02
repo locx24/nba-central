@@ -1,0 +1,22 @@
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    display:flex;
+    background-color: black;
+    justify-content: left;
+    min-width: fit-content;
+}
+
+.navbar h2{
+    margin-top: 35px;
+    color: white;
+}
+
+.navbar img{
+    height: 100px;
+    width: 120px;
+}
