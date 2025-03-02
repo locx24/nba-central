@@ -1,5 +1,4 @@
 import csv
-import pandas as pd
 from nba_api.live.nba.endpoints import scoreboard
 
 def main():
@@ -39,6 +38,7 @@ def main():
     games = scoreboard.ScoreBoard()
     
     data = games.get_dict()
+    
     
     gameList = data["scoreboard"]["games"]
     

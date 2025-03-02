@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    
+    <script>
+
+        function updateTable() {
+
+            var selectedSeason = document.getElementById("seasonDropdown").value;
+            var rows = document.querySelectorAll(".mvpRow");
+
+            rows.forEach(row => {
+
+                if (row.dataset.season === selectedSeason) {
+                    row.style.display = "";
+                } 
+                
+                else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+    </head>
+    
+    <body>
+
+        <div class="navbar">
+
+            <img src="https://www.logodesignlove.com/images/classic/nba-logo.jpg" alt="NBA Logo">
+            <h2>MVP Data</h2>
+            <button onclick="window.location.href='/';">Scoreboard</button>  
+
+        </div>
+
+        <div class="tableTitle">
+            <h3>Select a Season:</h3>
+
+            <select id="seasonDropdown" onchange="updateTable()">
+                <option value="">Select Year</option>
+
+                {% for season in seasons %}
+                    <option value="{{ season }}">{{ season }}</option>
+                {% endfor %}
+
+            </select>
+        </div>
+
+        <div class="table">
+            <table border="1">
+
+                <tr>
+                    <th>Season</th>
+                    <th>Player Name</th>
+                    <th>Points</th>
+                    <th>Assists</th>
+                    <th>Total Rebounds</th>
+                </tr>
+
+                {% for data in extractedData %}
+
+                <tr class="mvpRow" data-season="{{ data.Season }}" style="display: none;">
+                    <td>{{ data.Season }}</td>
+                    <td>{{ data['Player Name'] }}</td>
+                    <td>{{ data.Points }}</td>
+                    <td>{{ data.Assists }}</td>
+                    <td>{{ data['Total Rebounds'] }}</td>
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

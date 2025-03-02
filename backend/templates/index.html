@@ -11,18 +11,39 @@
 
     <body>
         <div class = "navbar">
+            
             <img src="https://www.logodesignlove.com/images/classic/nba-logo.jpg" alt="NBA Logo">
-            <h2>NBA Central</h2>      
+            <h2>NBA Central</h2>   
+
+            <div class = "button"> 
+                <button onclick="window.location.href='/mvp';"> MVP Data</button>   
+            </div>
         </div>
-        
-        <div = "table">
-            <table>
+       
+       <div class ="tableTitle">
+         <h3>Live Scoreboard:</h3>
+       </div>
+
+        <div class= "table">
+            <table border="1">
                 <tr>
                     <th>Away Team</th>
                     <th>Away Score</th>
                     <th>Home Team</th>
-                    <th>Home Score</th>        
+                    <th>Home Score</th>       
+                    <th>Game Status</th> 
                 </tr>
+
+                {% for game in games %}
+                    <tr>
+                    <td>{{game.awayTeam}}</td>
+                    <td>{{game.awayScore}}</td>
+                    <td>{{game.homeTeam}}</td>
+                    <td>{{game.homeScore}}</td>
+                    <td>{{game.gameStatusText}}</td>
+                    </tr>
+                {% endfor %}
+
             </table>
         </div>
         

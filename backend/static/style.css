@@ -7,16 +7,41 @@
 .navbar{
     display:flex;
     background-color: black;
-    justify-content: left;
-    min-width: fit-content;
 }
 
 .navbar h2{
-    margin-top: 35px;
+    justify-content: left;
+    margin-top: 30px;
     color: white;
 }
 
 .navbar img{
+    justify-content: left;
     height: 100px;
     width: 120px;
+    min-width: fit-content;
 }
+
+.navbar button{
+    height: 20px;
+    margin-left: 1050px;
+    margin-top: 70px;
+}
+
+.tableTitle{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.table{
+    display:flex;
+    justify-content: center;
+    margin-top: 35px;
+    align-items: center;
+}
+
+td{
+    text-align: center;
+}
+
