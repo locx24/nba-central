@@ -26,6 +26,14 @@
                 }
             });
         }
+
+        function openYouTube() {
+            window.open(
+                "https://www.youtube.com/watch?v=kI7sgorGHf0",
+                "_blank",
+                "width=800,height=450"
+            );
+        }
     </script>
     </head>
     
@@ -75,6 +83,14 @@
 
                 {% endfor %}
             </table>
+        </div>
+
+        <div class= "highlightVideo">
+
+            <h3>Current MVP Highlights:</h3>
+
+            <button onclick="openYouTube()">Watch Highlights</button>
+
         </div>
     </body>
 </html>

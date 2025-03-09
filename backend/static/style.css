@@ -45,3 +45,9 @@ td{
     text-align: center;
 }
 
+.highlightVideo{
+    padding: 50px;
+    display: flex;
+
+    justify-content: center;
+}
