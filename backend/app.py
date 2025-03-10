@@ -113,4 +113,4 @@ def mvp():
 
 # Run the Flask application in debug mode if this file is executed directly
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
